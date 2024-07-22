@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* Optionally, you can set Roboto as the default font for the entire application */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+}
+.curved-container::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 60%;
+  height: 100%;
+  background: #004AAD; /* Change this to match your color */
+  border-radius: 100% 100% 1500% 100%;
+  transform: translate(-10%, 50%);
+}
+.curved-container::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 60%;
+  height: 100%;
+  background: white;
+  border-radius: 150% 0% 50% 0% ;
+  transform: translate(65%, 50%);
+}
