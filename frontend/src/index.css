@@ -25,9 +25,17 @@ body {
   content: '';
   display: block;
   position: absolute;
-  width: 60%;
+  width: 62%;
   height: 100%;
   background: white;
-  border-radius: 150% 0% 50% 0% ;
+  border-radius: 150% 40% 50% 0% ;
   transform: translate(65%, 50%);
+}
+
+.custom-rounded-tr-2 {
+  border-top-right-radius: 2%;
+}
+
+.custom-rounded-br-2 {
+  border-bottom-right-radius: 2%;
 }

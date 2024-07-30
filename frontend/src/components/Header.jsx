@@ -2,6 +2,7 @@
   import { IoIosArrowDown } from "react-icons/io";
   import { IoMdPerson } from "react-icons/io";
 import img from '../assests/images/Profile.jpg'
+import { Link } from 'react-router-dom';
 
   const Header = () => {
    return (
@@ -47,15 +48,16 @@ import img from '../assests/images/Profile.jpg'
         </div>
 
         <div className='flex gap-2 items-center'>
-      <h1 className='text-black text-xl hover:cursor-pointer hover:text-white hover:underline transition duration-300'>
-        Login
-      </h1>
-      <button
-        type="button"
-        className="flex items-center text-xl gap-2 px-6 py-3.5 text-base font-medium text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 transition duration-300 hover:shadow-lg"
-      >
-        <IoMdPerson /> Sign Up
-      </button>
+      <Link to='/sign-in'>
+        <h1 className='text-black text-xl hover:cursor-pointer hover:text-white hover:underline transition duration-300'>
+          Login
+        </h1>
+      </Link>
+      <Link to='/sign-up'>
+        <button type="button" className="flex items-center text-xl gap-2 px-6 py-3.5 text-base font-medium text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 transition duration-300 hover:shadow-lg">
+          <IoMdPerson /> Sign Up
+        </button>
+      </Link>
     </div>
       </div>
     </>
