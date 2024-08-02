@@ -10,7 +10,7 @@ import OAuth from '../components/OAuth';
 const SignupSchema = yup.object().shape({
   firstName: yup.string().required('This field is required.'),
   lastName: yup.string().required('This field is required.'),
-  email: yup.string().email().required('This field is required.'),
+  email: yup.string().email('Invalid email address').required('This field is required.'),
   password: yup.string().min(6, 'Password is too short.').max(20, 'Password is too long.').required('This field is required.')
 });
 
@@ -49,11 +49,14 @@ const SignUp = () => {
               password: ''
             }}
             validationSchema={SignupSchema}
-            onSubmit={values => {
-              console.log(values);
+            onSubmit={(values, { setSubmitting }) => {
+              // Log form values to the console
+              console.log('Form Data:', values);
+              // Optionally, handle form submission here
+              setSubmitting(false);
             }}
           >
-            {({ errors, handleChange, touched }) => (
+            {({ errors, handleChange, touched, isSubmitting }) => (
               <Form>
                 <Grid container spacing={2}>
                   <Grid item xs={12} sm={6}>
@@ -120,8 +123,9 @@ const SignUp = () => {
                   fullWidth
                   variant="contained"
                   className="mt-6 p-3 bg-black text-white hover:opacity-80"
+                  disabled={isSubmitting}
                 >
-                  Create Account
+                  {isSubmitting ? 'Creating Account...' : 'Create Account'}
                 </Button>
               </Form>
             )}
@@ -135,7 +139,7 @@ const SignUp = () => {
             </Typography>
           </div>
           <div className="mt-4 text-center">
-          <OAuth/>
+            <OAuth />
           </div>
         </div>
       </div>
